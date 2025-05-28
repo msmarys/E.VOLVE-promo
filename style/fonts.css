@@ -1,4 +1,20 @@
 @font-face {
-  src: url('../fonts/PRESSSTART2P-REGULAR.TTF');
-  font-family: 'Press Start 2P';
+  font-family: "CoFo Sans";
+  src: url("../fonts/CoFoSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CoFo Sans";
+  src: url("../fonts/CoFoSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CoFo Sans";
+  src: url("../fonts/CoFoSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
 }
