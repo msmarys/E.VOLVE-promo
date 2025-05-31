@@ -1,5 +1,5 @@
 /* Политика */
-/* Для планшета горизонтального (1024px) */
+/* Горизонтальный планшет <=1024px */
 @media (max-width: 1024px) {
   .policy {
     width: 940px;
@@ -12,10 +12,26 @@
 
   .policy_title {
     width: 462px;
+    max-width: 100%;
   }
 }
 
-/* Для планшета вертикального (768px) */
+@media (max-width: 920px) and (min-width: 769px) {
+  .policy {
+    width: 880px;
+    max-width: 100%;
+  }
+
+  .policy_title {
+    width: 440px;
+  }
+
+  .policy_container {
+    gap: 120px;
+  }
+}
+
+/* Вертикальный планшет <=768px */
 @media (max-width: 768px) {
   .policy {
     width: 696px;
@@ -23,39 +39,38 @@
   }
 
   .policy_title {
-    display: block;
+    width: 100%;
+    max-width: 100%;
     margin-bottom: 40px;
-    width: 696px;
-    max-width: 696px;
   }
 
   .policy_container {
-    display: block;
-    margin-bottom: 40px;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
   }
 
   .policy_adoption {
-    display: block;
+    width: 100%;
     margin-bottom: 20px;
   }
 
   .policy_text {
-    display: block;
+    width: 100%;
   }
 }
 
-/* Для телефона (360px) */
-@media (max-width: 480px) {
+@media (max-width: 560px) and (min-width: 481px) {
   .policy {
-    width: 336px;
+    width: 480px;
     max-width: 100%;
   }
 
   .policy_title {
-    font-size: 36px;
+    font-size: 38px;
     margin-bottom: 40px;
-    width: 336px;
-    max-width: 336px;
+    width: 480px;
+    max-width: 480px;
   }
 
   .policy_container {
@@ -74,3 +89,34 @@
     display: block;
   }
 }
+
+/* Телефон <=480px */
+@media (max-width: 480px) {
+  .policy {
+    width: 336px;
+    max-width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .policy_title {
+    font-size: 36px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .policy_container {
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+  }
+
+  .policy_adoption,
+  .policy_text {
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* 404 ошибка */
