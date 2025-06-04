@@ -1,11 +1,70 @@
-html,
-body {
-  overflow: hidden;
+/* Меню статик */
+.main-menu {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.menu-wrapper {
+  max-width: 1160px;
+  height: 40px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-logo {
+  display: block;
+  width: auto;
   height: 100%;
 }
 
-[data-scroll-container] {
-  will-change: transform;
+.menu-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+}
+
+.menu-nav a,
+.menu-mail {
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  color: #232323;
+  text-decoration: none;
+  transition: filter 0.2s ease;
+}
+
+.menu-mail {
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.menu-nav a:hover,
+.menu-mail:hover {
+  filter: blur(2px);
+}
+
+/* Меню фикс */
+/* Фиксированное меню */
+.fixed-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 1000;
+  height: 70px; /* или высота меню */
+  padding: 15px 0; /* без отступа сверху */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* по желанию тень */
+  transition: opacity 0.3s ease;
 }
 
 /* Политика */
@@ -40,6 +99,7 @@ body {
   text-align: left;
   width: 367px;
   max-width: 666px;
+  margin-top: 90px;
 }
 
 .policy_container {
@@ -48,6 +108,7 @@ body {
   width: 100%;
   max-width: 1160px;
   gap: 297px;
+  margin-bottom: 100px;
 }
 
 .policy_adoption {
@@ -90,4 +151,20 @@ body {
   color: #232323;
   text-decoration: underline;
 }
+
+.fade-blur {
+  opacity: 0;
+  filter: blur(20px);
+  transform: translateY(40px);
+  transition: opacity 1.2s ease, filter 1.2s ease, transform 1.2s ease;
+  will-change: opacity, filter, transform;
+}
+
+.fade-blur.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+
 
