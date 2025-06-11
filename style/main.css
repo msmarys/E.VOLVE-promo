@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* Меню статик */
 .main-menu {
   position: absolute;
@@ -21,7 +25,7 @@
 .menu-logo {
   display: block;
   width: auto;
-  height: 100%;
+  height: 70%;
 }
 
 .menu-nav {
@@ -53,18 +57,15 @@
 }
 
 /* Меню фикс */
-/* Фиксированное меню */
-.fixed-menu {
+.main-menu.fixed {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  background: white;
+  background-color: #f8f8f8;
+  padding-top: 15px;
+  padding-bottom: 15px;
   z-index: 1000;
-  height: 70px; /* или высота меню */
-  padding: 15px 0; /* без отступа сверху */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* по желанию тень */
-  transition: opacity 0.3s ease;
+  height: 40px;
 }
 
 /* Политика */
@@ -78,7 +79,6 @@ body {
     #ffe8ea 88.63%
   );
   color: #232323;
-  padding-top: 90px;
 }
 
 .policy {
@@ -87,6 +87,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 170px;
 }
 
 .policy_title {
@@ -99,7 +100,6 @@ body {
   text-align: left;
   width: 367px;
   max-width: 666px;
-  margin-top: 90px;
 }
 
 .policy_container {
@@ -166,5 +166,22 @@ body {
   transform: translateY(0);
 }
 
+/* скроллбар */
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
 
+body::-webkit-scrollbar-track {
+  background: #ffe8ea;
+}
 
+body::-webkit-scrollbar-thumb {
+  background-color: #f8cfd3;
+  border-radius: 10px;
+  border: 2px solid #ffe8ea;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #e6b8bd;
+}
