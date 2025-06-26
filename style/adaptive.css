@@ -1,5 +1,151 @@
-/* футтер */
+/* меню */
 
+/* футтер */
+/* Горизонтальный планшет <=1024px */
+@media (max-width: 1024px) {
+  .footer-container {
+    width: 940px;
+  }
+
+  .footer-email {
+    font-size: 97px;
+  }
+}
+
+@media (max-width: 920px) and (min-width: 769px) {
+  .footer-container {
+    width: 860px;
+  }
+
+  .footer-email {
+    font-size: 85px;
+  }
+}
+
+/* Вертикальный планшет <=768px */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 40px 36px;
+  }
+
+  .footer-container {
+    width: 768px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .footer-text-left {
+    display: none;
+  }
+
+  .footer-text-right {
+    text-align: left;
+    width: 100%;
+  }
+
+  .footer-email {
+    font-size: 78px;
+  }
+
+  .footer_bottom {
+    width: 696px;
+    padding: 36px;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 36px;
+    align-items: flex-end;
+  }
+  .footer_middle {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 560px) and (min-width: 481px) {
+  .footer-container {
+    width: 460px;
+  }
+
+  .footer-email {
+    font-size: 50px;
+  }
+
+  .footer_bottom {
+    width: 440px;
+    padding: 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .copywrite,
+  .privacy_page {
+    text-align: center;
+  }
+}
+
+/* Телефон <=480px */
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 40px 12px;
+  }
+
+  .footer-container {
+    width: 336px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .footer-text-left {
+    display: none;
+  }
+
+  .footer-text-right {
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .footer-email {
+    font-size: 32px;
+  }
+
+  .footer_bottom {
+    width: 336px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .footer_bottom .my_profile {
+    order: 1;
+  }
+
+  .footer_bottom .privacy_page {
+    order: 2;
+  }
+
+  .footer_bottom .copywrite {
+    order: 3;
+  }
+
+  .copywrite,
+  .privacy_page {
+    text-align: center;
+  }
+
+  .copywrite,
+  .profile-link,
+  .privacy-link {
+    font-size: 16px;
+  }
+}
 
 /* Политика */
 /* Горизонтальный планшет <=1024px */
