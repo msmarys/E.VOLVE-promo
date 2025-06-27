@@ -1,93 +1,25 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8" />
-<title>Liquid Animated Gradient с курсором</title>
-<style>
-  html, body {
-    margin: 0; padding: 0; overflow: hidden; height: 100%;
-    background: #fff;
-  }
-  canvas {
-    display: block;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-  }
-</style>
-</head>
-<body>
-<canvas id="canvas"></canvas>
-<script>
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-
-let width, height;
-
-function resize() {
-  width = window.innerWidth;
-  height = window.innerHeight;
-  canvas.width = width;
-  canvas.height = height;
-}
-
-window.addEventListener('resize', resize);
-resize();
-
-// Цвета из твоей палитры
-const colors = [
-  '#F8F8F8',
-  '#F8CFD3',
-  '#FFE8EA',
-  '#FFDDDE'
-];
-
-// Координаты мыши нормализованные (0..1)
-let mouseX = 0.5;
-let mouseY = 0.5;
-
-window.addEventListener('mousemove', e => {
-  mouseX = e.clientX / width;
-  mouseY = e.clientY / height;
-});
-
-function lerp(a, b, t) {
-  return a + (b - a) * t;
-}
-
-let time = 0;
-
-function draw() {
-  time += 0.01;
-
-  // Плавное движение центра градиента — по синусам
-  const baseX = width / 2 + Math.sin(time) * width * 0.1;
-  const baseY = height / 2 + Math.cos(time * 1.3) * height * 0.1;
-
-  // Добавляем смещение по мыши (умножаем на небольшую величину)
-  const centerX = lerp(baseX, mouseX * width, 0.3);
-  const centerY = lerp(baseY, mouseY * height, 0.3);
-
-  // Пульсирующий радиус
-  const radius = width * (0.4 + 0.1 * Math.sin(time * 2));
-
-  const gradient = ctx.createRadialGradient(centerX, centerY, radius * 0.3, centerX, centerY, radius);
-
-  gradient.addColorStop(0, colors[1]);
-  gradient.addColorStop(0.3, colors[2]);
-  gradient.addColorStop(0.6, colors[3]);
-  gradient.addColorStop(1, colors[0]);
-
-  ctx.clearRect(0, 0, width, height);
-
-  ctx.fillStyle = gradient;
-  ctx.fillRect(0, 0, width, height);
-
-  requestAnimationFrame(draw);
-}
-
-draw();
-</script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ошибка 404 | Бюро мечт E.VOLVE</title>
+    <meta property="og:title" content="Ошибка 404 | E.VOLVE" />
+    <meta
+      property="og:description"
+      content="Страница ошибки сайта"
+    />
+    <meta
+      property="og:image"
+      content="https://msmarys.github.io/E.VOLVE-promo/img/preview.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+  </head>
+  <body>
+    
+  </body>
 </html>
-

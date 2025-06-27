@@ -1,4 +1,183 @@
 /* меню */
+/* Горизонтальный планшет <=1024px */
+@media (max-width: 1024px) {
+  .menu-wrapper {
+    max-width: 940px;
+  }
+}
+
+@media (max-width: 920px) and (min-width: 769px) {
+  .menu-wrapper {
+    max-width: 95%;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-header,
+  .mobile-menu-overlay {
+    display: none !important;
+  }
+}
+
+/* Вертикальный планшет <=768px */
+@media (max-width: 768px) {
+  .main-menu {
+    display: none;
+  }
+
+  body.mobile-open {
+    overflow: hidden;
+  }
+
+  .mobile-header {
+    position: absolute;
+    top: 30px;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+  }
+
+  .mobile-header.fixed {
+    position: fixed;
+    top: 0;
+    background: #f8f8f8;
+    padding: 12px;
+    border-radius: 0;
+  }
+
+  .mobile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-logo img {
+    height: 28px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    font-family: "CoFo Sans";
+    font-size: 16px;
+    font-weight: 400;
+    color: #232323;
+    letter-spacing: -0.64px;
+    cursor: pointer;
+  }
+
+  .menu-toggle .burger-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .menu-toggle.active .burger-icon {
+    transform: rotate(45deg);
+  }
+
+  .mobile-menu-overlay {
+    display: none;
+  }
+
+  .mobile-menu-overlay.active {
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      #ffe8ea 2.9%,
+      #f8f8f8 22.49%,
+      #ffe8ea 88.63%
+    );
+    padding: 24px 12px;
+    box-sizing: border-box;
+  }
+
+  .mobile-overlay-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    margin: auto 0;
+  }
+
+  .mobile-nav a {
+    font-family: "CoFo Sans";
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    color: #232323;
+    text-decoration: none;
+  }
+
+  .mobile-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .footer-mail {
+    font-family: "CoFo Sans";
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.96px;
+    line-height: 130%;
+    color: #232323;
+    text-align: center;
+    margin: 0;
+  }
+
+  .profile-link {
+    color: #232323;
+    font-family: "CoFo Sans";
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  .mobile-background-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+    height: 120px;
+    pointer-events: none;
+    z-index: -100;
+  }
+
+  .ticker {
+    display: flex;
+    width: max-content;
+    animation: ticker-move 20s linear infinite;
+    white-space: nowrap;
+    font-family: "CoFo Sans";
+    font-size: 100px;
+    font-weight: 500;
+    color: #f8cfd3;
+    letter-spacing: -6px;
+    text-transform: uppercase;
+  }
+
+  .ticker span {
+    padding-right: 64px;
+  }
+}
 
 /* футтер */
 /* Горизонтальный планшет <=1024px */
