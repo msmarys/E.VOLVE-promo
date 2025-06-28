@@ -344,8 +344,8 @@ body {
 }
 
 .error-button:hover {
-  background-color: #ffe8ea;
-  color: #f8cfd3;
+  background-color: #f8cfd3;
+  color: #232323;
 }
 
 .overlay-image {
