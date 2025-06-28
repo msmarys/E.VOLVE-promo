@@ -164,7 +164,7 @@
   .ticker {
     display: flex;
     width: max-content;
-    animation: ticker-move 20s linear infinite;
+    animation: ticker-move 20s ease-in-out infinite;
     white-space: nowrap;
     font-family: "CoFo Sans";
     font-size: 100px;
@@ -529,7 +529,7 @@
   .events-ticker {
     display: flex;
     width: max-content;
-    animation: events-ticker-move 20s linear infinite;
+    animation: events-ticker-move 20s ease-in-out infinite;
     white-space: nowrap;
     color: #f8cfd3;
     font-family: "CoFo Sans";
@@ -621,7 +621,7 @@
   .events-ticker {
     display: flex;
     width: max-content;
-    animation: events-ticker-move 20s linear infinite;
+    animation: events-ticker-move 20s ease-in-out infinite;
     white-space: nowrap;
     color: #f8cfd3;
     font-family: "CoFo Sans";
@@ -635,5 +635,104 @@
 
   .events-ticker span {
     padding-right: 64px;
+  }
+}
+
+/* главная  */
+@media (min-width: 768px) {
+  .tickers-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: -100;
+    pointer-events: none;
+  }
+
+  .ticker-row {
+    width: 100%;
+    overflow: hidden;
+    height: 237px;
+  }
+
+  .ticker {
+    display: flex;
+    width: max-content;
+    white-space: nowrap;
+    font-family: "CoFo Sans";
+    font-size: 250px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 95%;
+    letter-spacing: -12px;
+    text-transform: uppercase;
+  }
+
+  .ticker span {
+    padding-right: 48px;
+  }
+
+  .ticker-pink {
+    color: #f8f8f8;
+    animation: ticker-left 50s ease-in-out infinite;
+  }
+
+  .ticker-white {
+    color: #f8f8f8;
+    animation: ticker-right 40s ease-in-out infinite;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+  .main-description p {
+    font-size: 16px;
+  }
+
+  .tickers-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: -100;
+    pointer-events: none;
+  }
+
+  .ticker-row {
+    width: 100%;
+    overflow: hidden;
+    height: 171px;
+  }
+
+  .ticker {
+    display: flex;
+    width: max-content;
+    white-space: nowrap;
+    font-family: "CoFo Sans";
+    font-size: 180px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 95%;
+    letter-spacing: -12px;
+    text-transform: uppercase;
+  }
+
+  .ticker span {
+    padding-right: 48px;
+  }
+
+  .ticker-pink {
+    color: #ffe8ea;
+    animation: ticker-left 50s ease-in-out infinite;
+  }
+
+  .ticker-white {
+    color: #ffe8ea;
+    animation: ticker-right 40s ease-in-out infinite;
   }
 }
