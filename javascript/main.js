@@ -6,9 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileOverlay = document.querySelector(".mobile-menu-overlay");
   const burgerIcons = document.querySelectorAll(".burger-icon");
 
-  //фикс десктопа и мобилки
+  // фикс десктопа и мобилки
   window.addEventListener("scroll", () => {
-    // Десктоп
     if (window.scrollY > 250) {
       mainMenu?.classList.add("fixed");
       mobileHeader?.classList.add("fixed");
@@ -17,31 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
       mobileHeader?.classList.remove("fixed");
     }
   });
-
-  //скрытие десктоп-меню при видимости футера
-  if (mainMenu && footer) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (window.innerWidth > 1024) {
-            if (entry.isIntersecting) {
-              mainMenu.classList.add("hide-at-footer");
-            } else {
-              mainMenu.classList.remove("hide-at-footer");
-            }
-          } else {
-            mainMenu.classList.remove("hide-at-footer");
-          }
-        });
-      },
-      {
-        root: null,
-        threshold: 0,
-      }
-    );
-
-    observer.observe(footer);
-  }
 
   // бургер
   menuToggleButtons.forEach((btn) => {
@@ -59,4 +33,22 @@ document.addEventListener("DOMContentLoaded", () => {
       el.classList.add("visible");
     });
   });
+
+  // появление карточек событий по скроллу
+  const cards = document.querySelectorAll(".fade-sticky");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in");
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
+
+  cards.forEach((card) => observer.observe(card));
 });

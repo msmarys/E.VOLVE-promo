@@ -191,12 +191,6 @@ html {
   filter: blur(2px);
 }
 
-.main-menu.hide-at-footer {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
 /* Политика */
 body {
   margin: 0;
@@ -364,6 +358,116 @@ body {
   object-fit: contain;
   z-index: 0.5;
   pointer-events: none;
+}
+
+/* события */
+.events-list {
+  padding: 120px 0 100px;
+}
+
+.events-stroke {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  height: 285px;
+  pointer-events: none;
+  z-index: -100;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.events-ticker {
+  display: flex;
+  width: max-content;
+  animation: events-ticker-move 20s linear infinite;
+  white-space: nowrap;
+  color: #f8cfd3;
+  font-family: "CoFo Sans";
+  font-size: 300px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 95%;
+  letter-spacing: -12px;
+  text-transform: uppercase;
+}
+
+.events-ticker span {
+  padding-right: 64px;
+}
+
+.events {
+  margin-top: 90px;
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.event-card {
+  width: 420px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: sticky;
+  top: 100px;
+  opacity: 1;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.event-posters {
+  width: 420px;
+  height: 292px;
+}
+
+.event-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.black-card {
+  background: #232323;
+  transform: rotate(-8deg);
+}
+
+.pink-card {
+  background: #f8f8f8;
+  transform: rotate(10deg);
+}
+
+.black-card h3,
+.black-card p {
+  color: #ffe8ea;
+}
+
+.pink-card h3,
+.pink-card p {
+  color: #f8cfd3;
+}
+
+.event-card h3 {
+  text-align: center;
+  font-family: "CoFo Sans";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: -1.44px;
+}
+
+.event-card p {
+  text-align: center;
+  font-family: "CoFo Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
 }
 
 /* скроллбар */
