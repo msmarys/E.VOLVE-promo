@@ -204,11 +204,12 @@
 /* Вертикальный планшет <=768px */
 @media (max-width: 768px) {
   .site-footer {
+    width: 696px;
     padding: 40px 36px;
   }
 
   .footer-container {
-    width: 768px;
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
@@ -218,13 +219,21 @@
     display: none;
   }
 
+  .profile-link {
+    color: #f8f8f8;
+    text-decoration-line: underline;
+    text-underline-offset: 4.5px;
+    text-decoration-thickness: 0.54px;
+    text-decoration-skip-ink: auto;
+  }
+
   .footer-text-right {
     text-align: left;
     width: 100%;
   }
 
   .footer-email {
-    font-size: 78px;
+    font-size: 72px;
   }
 
   .footer_bottom {
@@ -269,6 +278,7 @@
 /* Телефон <=480px */
 @media (max-width: 480px) {
   .site-footer {
+    width: 100%;
     padding: 40px 12px;
   }
 
@@ -447,4 +457,183 @@
   }
 }
 
-/* 404 ошибка */
+/* события */
+/* 481 <= экраны <=1439 */
+@media (min-width: 481px) and (max-width: 1439px) {
+  .events {
+    flex-direction: row;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px;
+    margin-top: 40px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .event-card {
+    flex: 0 0 auto;
+    width: 300px;
+    min-height: 458px;
+    transform: none !important;
+    position: static;
+    scroll-snap-align: start;
+    opacity: 1 !important;
+  }
+
+  .event-card h3 {
+    font-size: 32px;
+  }
+
+  .event-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .fade-sticky {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .black-card,
+  .pink-card {
+    transform: none !important;
+  }
+
+  .events-stroke {
+    display: none;
+  }
+
+  .events {
+    scrollbar-width: none;
+  }
+
+  .events::-webkit-scrollbar {
+    display: none;
+  }
+
+  .events-stroke {
+    position: absolute;
+    display: block;
+    top: 240px;
+    width: 100%;
+    overflow: hidden;
+    height: 285px;
+    pointer-events: none;
+    z-index: -100;
+  }
+
+  .events-ticker {
+    display: flex;
+    width: max-content;
+    animation: events-ticker-move 20s linear infinite;
+    white-space: nowrap;
+    color: #f8cfd3;
+    font-family: "CoFo Sans";
+    font-size: 300px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 95%;
+    letter-spacing: -12px;
+    text-transform: uppercase;
+  }
+
+  .events-ticker span {
+    padding-right: 64px;
+  }
+}
+
+/* экраны <= 480*/
+@media (max-width: 480px) {
+  .events {
+    flex-direction: row;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px;
+    margin-top: 40px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .event-card {
+    flex: 0 0 auto;
+    width: 300px;
+    min-height: 405px;
+    transform: none !important;
+    position: static;
+    scroll-snap-align: start;
+    opacity: 1 !important;
+  }
+
+  .event-card h3 {
+    font-size: 28px;
+  }
+
+  .event-card p {
+    font-size: 16px;
+  }
+
+  .event-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .fade-sticky {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .black-card,
+  .pink-card {
+    transform: none !important;
+  }
+
+  .events-stroke {
+    display: none;
+  }
+
+  .events {
+    scrollbar-width: none;
+  }
+
+  .events::-webkit-scrollbar {
+    display: none;
+  }
+
+  .events-stroke {
+    position: absolute;
+    display: block;
+    top: 180px;
+    width: 100%;
+    overflow: hidden;
+    height: 142px;
+    pointer-events: none;
+    z-index: -100;
+  }
+
+  .events-ticker {
+    display: flex;
+    width: max-content;
+    animation: events-ticker-move 20s linear infinite;
+    white-space: nowrap;
+    color: #f8cfd3;
+    font-family: "CoFo Sans";
+    font-size: 150px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 95%;
+    letter-spacing: -12px;
+    text-transform: uppercase;
+  }
+
+  .events-ticker span {
+    padding-right: 64px;
+  }
+}
