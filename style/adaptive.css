@@ -279,7 +279,6 @@
 @media (max-width: 480px) {
   .site-footer {
     width: 100%;
-    padding: 40px 12px;
   }
 
   .footer-container {
@@ -734,5 +733,103 @@
   .ticker-white {
     color: #ffe8ea;
     animation: ticker-right 40s ease-in-out infinite;
+  }
+}
+
+/* департамент  */
+@media (max-width: 1024px) {
+  .department-book h2 {
+    max-width: 596px;
+    margin: 0 auto 40px;
+  }
+
+  .gallery-wrapper {
+    width: 940px;
+  }
+
+  .gallery-img {
+    width: 940px;
+  }
+}
+
+@media (max-width: 920px) and (min-width: 769px) {
+  .gallery-wrapper {
+    width: 860px;
+  }
+
+  .gallery-img {
+    width: 860px;
+  }
+}
+
+@media (max-width: 768px) {
+  .department-book h2 {
+    max-width: 596px;
+    margin: 0 auto 40px;
+  }
+
+  .gallery-wrapper {
+    width: 696px;
+  }
+
+  .gallery-img {
+    width: 696px;
+  }
+}
+
+@media (max-width: 560px) and (min-width: 481px) {
+  .gallery-wrapper {
+    width: 440px;
+  }
+
+  .gallery-img {
+    width: 440px;
+  }
+
+  .gallery-controls {
+    width: 310px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    box-sizing: border-box;
+  }
+
+  .department {
+    max-width: 336px;
+    width: 100%;
+    margin: 90px auto 100px;
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+
+  .department-book h2 {
+    font-size: 36px;
+  }
+
+  .gallery-wrapper {
+    width: 100%;
+    min-width: 360px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .gallery-img {
+    width: 100%;
+    max-width: 360px;
+    height: 500px;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+
+  .gallery-controls {
+    width: 306px;
+  }
+
+  .gallery-controls button {
+    font-size: 16px;
   }
 }

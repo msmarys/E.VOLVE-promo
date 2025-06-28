@@ -150,13 +150,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const images = document.querySelectorAll(".gallery-img");
   const prevBtn = document.querySelector(".gallery-prev");
   const nextBtn = document.querySelector(".gallery-next");
+  const wrapper = document.querySelector(".gallery-wrapper");
 
-  if (track && images.length && prevBtn && nextBtn) {
+  if (track && images.length && prevBtn && nextBtn && wrapper) {
     let currentIndex = 0;
-    const imageWidth = 960;
 
     function updateGallery() {
-      const offset = -currentIndex * imageWidth;
+      const slideWidth = wrapper.clientWidth;
+      const offset = -currentIndex * slideWidth;
       track.style.transform = `translateX(${offset}px)`;
     }
 
@@ -174,6 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    window.addEventListener("resize", updateGallery);
     updateGallery();
   }
 });
