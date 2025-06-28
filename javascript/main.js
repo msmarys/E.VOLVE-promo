@@ -144,6 +144,38 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   cards.forEach((card) => observer.observe(card));
+
+  // галерея департамента
+  const track = document.querySelector(".gallery-track");
+  const images = document.querySelectorAll(".gallery-img");
+  const prevBtn = document.querySelector(".gallery-prev");
+  const nextBtn = document.querySelector(".gallery-next");
+
+  if (track && images.length && prevBtn && nextBtn) {
+    let currentIndex = 0;
+    const imageWidth = 960;
+
+    function updateGallery() {
+      const offset = -currentIndex * imageWidth;
+      track.style.transform = `translateX(${offset}px)`;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < images.length - 1) {
+        currentIndex++;
+        updateGallery();
+      }
+    });
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateGallery();
+      }
+    });
+
+    updateGallery();
+  }
 });
 
 // Запуск градиентной анимации — на `window.onload`
