@@ -149,6 +149,29 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   members.forEach((member) => memberObserver.observe(member));
 
+  // карточки миссии
+  const missionCards = document.querySelectorAll(".mission-card");
+
+  missionCards.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      missionCards.forEach((c) => {
+        if (c === card) {
+          c.classList.add("expanded");
+          c.classList.remove("compressed");
+        } else {
+          c.classList.remove("expanded");
+          c.classList.add("compressed");
+        }
+      });
+    });
+
+    card.addEventListener("mouseleave", () => {
+      missionCards.forEach((c) => {
+        c.classList.remove("expanded", "compressed");
+      });
+    });
+  });
+
   // галерея департамента
   const track = document.querySelector(".gallery-track");
   const images = document.querySelectorAll(".gallery-img");

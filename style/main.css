@@ -1110,7 +1110,82 @@ textarea:focus {
   margin-left: auto;
 }
 
+.bureau-mission {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 1160px;
+  margin: 120px auto 0;
+  gap: 16px;
+}
 
+.mission-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 278px;
+  height: 400px;
+  padding: 20px;
+  gap: 10px;
+  background: #ffddde;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.mission-card:nth-child(2) {
+  background: #f8cfd3;
+}
+
+.mission-card:nth-child(3) {
+  background: #ffe8ea;
+}
+
+.mission-card h4 {
+  margin: 0;
+  color: #232323;
+  font-family: "CoFo Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.96px;
+  transition: padding 0.4s ease;
+}
+
+.mission-card p {
+  align-self: stretch;
+  margin: 0;
+  padding: 0px;
+  color: #232323;
+  font-family: "CoFo Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+/* карточки миссии */
+.mission-card.expanded {
+  width: 460px;
+}
+
+.mission-card.expanded h4 {
+  padding-top: 20px;
+}
+
+.mission-card.expanded p {
+  opacity: 1;
+  max-height: 300px;
+}
+
+/* карточки ужимаются в миссии */
+.mission-card.compressed {
+  width: 218px;
+}
 
 /* скроллбар */
 body::-webkit-scrollbar {
