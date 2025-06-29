@@ -174,6 +174,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // шаги на стр о бюро
+  if (window.innerWidth > 1026) {
+    const stepCards = document.querySelectorAll(".step-card");
+    stepCards.forEach((card) => {
+      card.addEventListener("mouseenter", () => {
+        card.style.zIndex = "10";
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.zIndex = "1";
+      });
+    });
+  }
+
   // галерея департамента
   const track = document.querySelector(".gallery-track");
   const images = document.querySelectorAll(".gallery-img");

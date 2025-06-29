@@ -1187,6 +1187,122 @@ textarea:focus {
   width: 218px;
 }
 
+.bureau-steps {
+  max-width: 1160px;
+  margin: 120px auto 0;
+}
+
+.bureau-inspo {
+  text-align: center;
+}
+
+.bureau-inspo h2 {
+  width: 982px;
+  text-align: left;
+  color: #232323;
+  font-family: "CoFo Sans";
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 95%;
+  letter-spacing: -2.8px;
+  margin-bottom: 10px;
+}
+
+.bureau-inspo p {
+  text-align: left;
+  width: 360px;
+  margin: 0 auto 50px;
+  color: #232323;
+  font-family: "CoFo Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.steps-cards {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step-card {
+  position: relative;
+  width: 1160px;
+  height: 326px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+  z-index: 1;
+}
+
+.step-card:not(:first-child) {
+  margin-top: -210px;
+}
+
+.step1 {
+  background: #f8cfd3;
+}
+.step2 {
+  background: #ffe8ea;
+}
+.step3 {
+  background: #f8cfd3;
+}
+.step4 {
+  background: linear-gradient(180deg, #ffddde, #fceff0);
+}
+
+.step-card p.step-num {
+  color: #232323;
+  font-family: "CoFo Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  margin-bottom: 3px;
+}
+
+.step-card h1 {
+  font-family: "CoFo Sans";
+  font-style: normal;
+  font-weight: 500;
+  line-height: 95%;
+  text-transform: uppercase;
+  margin-bottom: 17px;
+}
+
+.step1 h1,
+.step3 h1 {
+  font-size: 120px;
+  color: #ffe8ea;
+  letter-spacing: -4.8px;
+}
+
+.step2 h1,
+.step4 h1 {
+  font-size: 80px;
+  color: #f8cfd3;
+  letter-spacing: -4.8px;
+}
+
+.step-card .step-desc {
+  opacity: 0;
+  text-align: left;
+  width: 415px;
+  color: #232323;
+  font-family: "CoFo Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+
 /* скроллбар */
 body::-webkit-scrollbar {
   width: 10px;

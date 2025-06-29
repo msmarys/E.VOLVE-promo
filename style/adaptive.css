@@ -1113,6 +1113,55 @@
   .mission-card.compressed {
     width: 460px !important;
   }
+
+  .step-card:not(:first-child) {
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .step-card .step-desc {
+    opacity: 1;
+  }
+
+  .steps-cards {
+    gap: 10px;
+  }
+
+  .step-card {
+    margin-bottom: 40px;
+    position: relative;
+    width: 1120px;
+    height: 300px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+    z-index: 1;
+  }
+
+  .step-card:not(:first-child) {
+    margin-top: 0px;
+  }
+}
+
+@media (min-width: 1280px) and (hover: hover) and (pointer: fine) {
+  .step-card:hover {
+    transform: translateY(-190px);
+    z-index: 10;
+  }
+
+  .step-card:hover h1,
+  .step-card:hover p.step-num {
+    color: #232323 !important;
+  }
+
+  .step-card:hover .step-desc {
+    opacity: 1;
+    height: auto;
+  }
 }
 
 @media (max-width: 920px) and (min-width: 769px) {
@@ -1283,6 +1332,73 @@
   }
 }
 
+@media (max-width: 768px) {
+  .bureau-inspo h2 {
+    width: 696px;
+  }
+
+  .step-card p.step-num {
+    display: none;
+  }
+  .bureau-inspo p {
+    margin: 30px 0 30px 0;
+  }
+
+  .step-card {
+    align-items: flex-start;
+  }
+
+  .step4 {
+    background: #ffddde;
+  }
+
+  .bureau-steps {
+    max-width: 696px;
+  }
+
+  .steps-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 16px;
+    scroll-behavior: smooth;
+    flex-direction: row;
+  }
+
+  .steps-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .step-card {
+    flex: 0 0 auto;
+    width: 460px;
+    height: 290px;
+    margin-top: 0 !important;
+    transition: none;
+    transform: none;
+  }
+
+  .step-card h1 {
+    letter-spacing: -1.44px;
+    font-size: 36px;
+    text-transform: none;
+    margin-bottom: 17px;
+  }
+
+  .step-card h1,
+  .step-card .step-desc {
+    color: #232323;
+  }
+
+  .step-card .step-desc {
+    opacity: 1;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
 @media (max-width: 480px) {
   .bureau-team-title {
     width: 336px;
@@ -1383,5 +1499,95 @@
     font-weight: 500;
     letter-spacing: -0.8px;
     display: block !important;
+  }
+
+  .bureau-inspo h2 {
+    letter-spacing: -1.44px;
+    font-size: 36px;
+    width: 336px;
+  }
+
+  .step-card p.step-num {
+    display: none;
+  }
+  .bureau-inspo p {
+    font-size: 16px;
+    margin: 30px 0 30px 0;
+  }
+
+  .step-card {
+    align-items: flex-start;
+  }
+
+  .step4 {
+    background: #ffddde;
+  }
+
+  .bureau-steps {
+    max-width: 336px;
+  }
+
+  .steps-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 16px;
+    scroll-behavior: smooth;
+    flex-direction: row;
+  }
+
+  .steps-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .step-card {
+    flex: 0 0 auto;
+    width: 340px;
+    height: 350px;
+    margin-top: 0 !important;
+    transition: none;
+    transform: none;
+  }
+
+  .step-card h1 {
+    text-align: left;
+    letter-spacing: -1.44px;
+    font-size: 36px;
+    text-transform: none;
+    margin-bottom: 17px;
+  }
+
+  .step-card h1,
+  .step-card .step-desc {
+    color: #232323;
+  }
+
+  .step-card .step-desc {
+    width: 300px;
+    font-size: 16px;
+    opacity: 1;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+@media (min-width: 1280px) {
+  .step-card:hover .step-desc {
+    opacity: 1;
+    height: auto;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .step-card:hover {
+    transform: translateY(-190px);
+    z-index: 10;
+  }
+
+  .step-card:hover h1,
+  .step-card:hover p.step-num {
+    color: #232323 !important;
   }
 }
