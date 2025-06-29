@@ -178,9 +178,50 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", updateGallery);
     updateGallery();
   }
-});
 
-// Запуск градиентной анимации — на `window.onload`
-window.addEventListener("load", () => {
-  new GradientAnimation();
+  // галерея магазина
+  // галерея магазина
+  const shopTrack = document.querySelector(".shop-gallery-track");
+  const shopSlides = document.querySelectorAll(".shop-slide");
+  const shopPrevBtn = document.querySelector(".shop-gallery-prev");
+  const shopNextBtn = document.querySelector(".shop-gallery-next");
+
+  if (shopTrack && shopSlides.length && shopPrevBtn && shopNextBtn) {
+    let shopIndex = 0;
+
+    function updateShopGallery() {
+      const slideWidth = shopSlides[0].offsetWidth;
+      const offset = -shopIndex * slideWidth;
+      shopTrack.style.transform = `translateX(${offset}px)`;
+    }
+
+    shopNextBtn.addEventListener("click", () => {
+      if (shopIndex < shopSlides.length - 1) {
+        shopIndex++;
+        updateShopGallery();
+      }
+    });
+
+    shopPrevBtn.addEventListener("click", () => {
+      if (shopIndex > 0) {
+        shopIndex--;
+        updateShopGallery();
+      }
+    });
+
+    window.addEventListener("resize", updateShopGallery);
+    updateShopGallery();
+  }
+
+  // обработка кнопок предзаказа
+  document.querySelectorAll(".shop-order").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      console.log("Открыть popup предзаказа");
+    });
+  });
+
+  // Запуск градиентной анимации — на `window.onload`
+  window.addEventListener("load", () => {
+    new GradientAnimation();
+  });
 });
