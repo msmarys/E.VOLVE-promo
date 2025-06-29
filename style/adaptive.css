@@ -1069,15 +1069,49 @@
   .bureau-intro {
     width: 960px;
   }
+
+  .bureau-team {
+    max-width: 940px;
+  }
+
+  .team-member {
+    width: 920px;
+  }
+
+  .member-info h2 {
+    margin-bottom: 120px;
+  }
 }
 
 @media (max-width: 920px) and (min-width: 769px) {
   .bureau-intro {
     width: 768px;
   }
+
+  .bureau-team {
+    max-width: 768px;
+  }
+
+  .team-member {
+    width: 768px;
+  }
+
+  .member-info h2 {
+    font-size: 48px;
+    margin-bottom: 80px;
+  }
+
+  .member-img {
+    width: 450px;
+    height: 420px;
+  }
 }
 
 @media (max-width: 768px) {
+  .bureau-team-title {
+    width: 696px;
+  }
+
   .bureau-intro {
     width: 696px;
   }
@@ -1086,15 +1120,74 @@
     font-size: 36px;
     line-height: 110%;
   }
+
+  .bureau-team {
+    max-width: 696px;
+  }
+
+  .team-member {
+    width: 670px;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .member-info {
+    order: 2;
+    width: 100%;
+  }
+
+  .member-img {
+    order: 1;
+    margin: 0 auto;
+    width: 435px;
+    height: 400px;
+    margin-top: 16px;
+  }
+
+  .member-info h2 {
+    margin-bottom: 60px;
+  }
 }
 
 @media (max-width: 560px) and (min-width: 481px) {
   .bureau-intro {
     width: 440px;
   }
+
+  .bureau-team {
+    max-width: 456px;
+  }
+
+  .team-member {
+    width: 456px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .member-info {
+    width: 100%;
+  }
+
+  .member-img {
+    width: 360px;
+    height: 300px;
+    margin-top: 16px;
+  }
+
+  .member-info h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
 }
 
 @media (max-width: 480px) {
+  .bureau-team-title {
+    width: 336px;
+    font-size: 36px;
+    letter-spacing: -1.44px;
+  }
+
   .bureau-intro {
     width: 336px;
   }
@@ -1109,5 +1202,52 @@
   .bureau-button {
     width: 300px;
     font-size: 16px;
+  }
+
+  .bureau-team {
+    max-width: 336px;
+  }
+
+  .team-member {
+    width: 336px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .member-info {
+    order: 2;
+    width: 100%;
+  }
+
+  .member-img {
+    order: 1;
+    width: 312px;
+    height: 285px;
+    margin-top: 16px;
+  }
+
+  .member-info h2 {
+    font-size: 36px;
+    margin-bottom: 32px;
+  }
+
+  .member-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .member-row:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .member-row:nth-of-type(2) {
+    gap: 8px;
+  }
+
+  .member-row p {
+    font-size: 16px;
+    line-height: 130%;
   }
 }

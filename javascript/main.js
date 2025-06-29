@@ -135,6 +135,20 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   cards.forEach((card) => observer.observe(card));
 
+  // накладывание карточек в команде
+  const members = document.querySelectorAll(".team-member");
+  const memberObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in");
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+  members.forEach((member) => memberObserver.observe(member));
+
   // галерея департамента
   const track = document.querySelector(".gallery-track");
   const images = document.querySelectorAll(".gallery-img");

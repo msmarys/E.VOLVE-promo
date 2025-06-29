@@ -986,6 +986,132 @@ textarea:focus {
   color: #f8cfd3;
 }
 
+.bureau-team {
+  margin-top: 120px;
+  margin-bottom: 120px;
+  max-width: 1160px;
+  margin-inline: auto;
+}
+
+.bureau-team-title {
+  margin-bottom: 40px;
+  width: 863px;
+  color: #232323;
+  font-family: "CoFo Sans";
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 95%;
+  letter-spacing: -2.8px;
+}
+
+.team-members {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+}
+
+.team-member {
+  display: flex;
+  width: 1160px;
+  height: 480px;
+  padding: 16px;
+  align-items: flex-start;
+  gap: 16px;
+  position: sticky;
+  top: 120px;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.team-member.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-member:nth-child(1) {
+  background: #232323;
+}
+
+.team-member:nth-child(2) {
+  background: #f8cfd3;
+}
+
+.team-member:nth-child(3) {
+  background: #232323;
+}
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.member-info h2 {
+  font-family: "CoFo Sans";
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 95%;
+  letter-spacing: -2.8px;
+  margin-bottom: 290px;
+}
+
+.member-row {
+  display: flex;
+  align-items: center;
+  gap: 110px;
+  align-self: stretch;
+  margin-bottom: 20px;
+}
+
+.member-row:nth-of-type(2) {
+  gap: 92px;
+}
+
+.member-row {
+  display: flex;
+  align-items: center;
+  gap: 110px;
+  align-self: stretch;
+  margin-bottom: 20px;
+}
+
+.member-row:nth-of-type(2) {
+  gap: 92px;
+}
+
+.member-row p:first-child {
+  font-weight: 700;
+}
+
+.team-member:nth-child(1) .member-info,
+.team-member:nth-child(3) .member-info,
+.team-member:nth-child(1) p,
+.team-member:nth-child(3) p,
+.team-member:nth-child(1) h2,
+.team-member:nth-child(3) h2 {
+  color: #ffe8ea;
+}
+
+.team-member:nth-child(2) .member-info,
+.team-member:nth-child(2) p,
+.team-member:nth-child(2) h2 {
+  color: #232323;
+}
+
+.member-img {
+  width: 550px;
+  height: 477px;
+  object-fit: cover;
+  margin-left: auto;
+}
+
+
+
 /* скроллбар */
 body::-webkit-scrollbar {
   width: 10px;
