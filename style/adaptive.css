@@ -1063,3 +1063,51 @@
     display: none !important;
   }
 }
+
+/* о бюро */
+@media (max-width: 1024px) {
+  .bureau-intro {
+    width: 960px;
+  }
+}
+
+@media (max-width: 920px) and (min-width: 769px) {
+  .bureau-intro {
+    width: 768px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bureau-intro {
+    width: 696px;
+  }
+
+  .bureau-intro h2 {
+    font-size: 36px;
+    line-height: 110%;
+  }
+}
+
+@media (max-width: 560px) and (min-width: 481px) {
+  .bureau-intro {
+    width: 440px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bureau-intro {
+    width: 336px;
+  }
+
+  .bureau-intro h2 {
+    font-size: 20px;
+    line-height: 110%;
+    margin-bottom: 20px;
+    letter-spacing: -0.8px;
+  }
+
+  .bureau-button {
+    width: 300px;
+    font-size: 16px;
+  }
+}
