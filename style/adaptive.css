@@ -1081,6 +1081,38 @@
   .member-info h2 {
     margin-bottom: 120px;
   }
+
+  .bureau-mission {
+    max-width: 940px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .mission-card {
+    width: 460px;
+    height: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
+    transition: none !important;
+  }
+
+  .mission-card h4 {
+    padding: 20px;
+  }
+
+  .mission-card p {
+    display: block !important;
+  }
+
+  .mission-card.expanded,
+  .mission-card.compressed {
+    width: 460px !important;
+  }
 }
 
 @media (max-width: 920px) and (min-width: 769px) {
@@ -1104,6 +1136,21 @@
   .member-img {
     width: 450px;
     height: 420px;
+  }
+
+  .bureau-mission {
+    max-width: 720px;
+    gap: 20px;
+  }
+
+  .mission-card {
+    width: 336px;
+    height: 400px;
+  }
+
+  .mission-card.expanded,
+  .mission-card.compressed {
+    width: 336px !important;
   }
 }
 
@@ -1148,6 +1195,36 @@
   .member-info h2 {
     margin-bottom: 60px;
   }
+
+  .bureau-mission {
+    max-width: 696px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .mission-card {
+    width: 298px;
+    height: 320px;
+    padding: 20px;
+  }
+
+  .mission-card.expanded,
+  .mission-card.compressed {
+    width: 336px !important;
+  }
+
+  .mission-card h4 {
+    padding: 0px;
+  }
+
+  .mission-card p {
+    opacity: 1;
+    max-height: 90px;
+    overflow: visible;
+    display: block !important;
+  }
 }
 
 @media (max-width: 560px) and (min-width: 481px) {
@@ -1178,6 +1255,31 @@
   .member-info h2 {
     font-size: 40px;
     margin-bottom: 40px;
+  }
+
+  .bureau-mission {
+    max-width: 440px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mission-card {
+    width: 100%;
+    height: 320px;
+    padding: 20px;
+  }
+
+  .mission-card.expanded,
+  .mission-card.compressed {
+    width: 100% !important;
+  }
+
+  .mission-card h4 {
+    padding: 20px;
+  }
+
+  .mission-card p {
+    display: block !important;
   }
 }
 
@@ -1250,5 +1352,36 @@
   .member-row p {
     font-size: 16px;
     line-height: 130%;
+  }
+
+  .bureau-mission {
+    max-width: 336px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mission-card {
+    width: 316px;
+    height: 300px;
+    padding: 20px;
+  }
+
+  .mission-card.expanded,
+  .mission-card.compressed {
+    width: 336px !important;
+  }
+
+  .mission-card h4 {
+    padding: 0px;
+    font-size: 28px;
+    letter-spacing: -1.12px;
+  }
+
+  .mission-card p {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.8px;
+    display: block !important;
   }
 }

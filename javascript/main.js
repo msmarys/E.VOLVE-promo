@@ -152,25 +152,27 @@ document.addEventListener("DOMContentLoaded", () => {
   // карточки миссии
   const missionCards = document.querySelectorAll(".mission-card");
 
-  missionCards.forEach((card) => {
-    card.addEventListener("mouseenter", () => {
-      missionCards.forEach((c) => {
-        if (c === card) {
-          c.classList.add("expanded");
-          c.classList.remove("compressed");
-        } else {
-          c.classList.remove("expanded");
-          c.classList.add("compressed");
-        }
+  if (window.innerWidth > 1024) {
+    missionCards.forEach((card) => {
+      card.addEventListener("mouseenter", () => {
+        missionCards.forEach((c) => {
+          if (c === card) {
+            c.classList.add("expanded");
+            c.classList.remove("compressed");
+          } else {
+            c.classList.remove("expanded");
+            c.classList.add("compressed");
+          }
+        });
       });
-    });
 
-    card.addEventListener("mouseleave", () => {
-      missionCards.forEach((c) => {
-        c.classList.remove("expanded", "compressed");
+      card.addEventListener("mouseleave", () => {
+        missionCards.forEach((c) => {
+          c.classList.remove("expanded", "compressed");
+        });
       });
     });
-  });
+  }
 
   // галерея департамента
   const track = document.querySelector(".gallery-track");
