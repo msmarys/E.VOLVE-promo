@@ -375,6 +375,43 @@
       </div>
     </footer>
 
+    <!-- попап -->
+    <div class="popup-overlay" id="shop-popup-overlay">
+      <div class="shop-popup">
+        <img src="./img/close-icon.svg" class="popup-close" />
+
+        <h3 class="popup-title">
+          Оформите предзаказ на&nbsp;<span class="popup-product-name"></span>
+        </h3>
+
+        <form class="popup-form">
+          <input type="text" name="name" placeholder="Имя" required />
+          <input type="email" name="email" placeholder="E-mail" required />
+          <textarea
+            name="comment"
+            placeholder="Комментарий к заказу"
+          ></textarea>
+          <button type="submit" class="popup-submit">Отправить</button>
+          <p class="popup-policy">
+            Нажимая на кнопку, вы соглашаетесь с
+            <a
+              href="https://msmarys.github.io/E.VOLVE-promo/privacy.html"
+              target="_blank"
+              >нашей политикой конфиденциальности</a
+            >
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Успешная отправка -->
+    <div class="popup-success" id="popup-success">
+      <h5 class="popup-success-message">
+        Спасибо, мы&nbsp;получили твои контакты! Когда мерч выйдет в&nbsp;продажу,
+        мы&nbsp;с&nbsp;тобой свяжемся.
+      </h5>
+    </div>
+
     <script src="./javascript/main.js"></script>
   </body>
 </html>

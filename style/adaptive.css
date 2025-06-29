@@ -836,3 +836,41 @@
 
 /* магазин  */
 
+/* магазин попап */
+@media (max-width: 480px) {
+  .popup-close {
+    top: 40px;
+  }
+
+  .shop-popup {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .popup-title {
+    width: 296px;
+    font-size: 28px;
+  }
+
+  .popup-form input,
+  .popup-form textarea {
+    width: 296px;
+    font-size: 16px;
+  }
+
+  .popup-submit {
+    width: 320px;
+    font-size: 16px;
+  }
+
+  .popup-submit {
+    padding: 12px;
+  }
+
+  popup-policy {
+    max-width: 320px;
+  }
+}

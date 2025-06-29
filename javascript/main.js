@@ -1,4 +1,4 @@
-// анимированный градиент
+// градиентный фон
 class GradientAnimation {
   constructor() {
     this.cnv = document.querySelector("#gradient-canvas");
@@ -9,7 +9,6 @@ class GradientAnimation {
     this.minRadius = 300;
     this.maxRadius = 600;
     this.speed = 0.005;
-
     this.mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 
     window.addEventListener("mousemove", (e) => {
@@ -65,7 +64,6 @@ class Circle {
     this.baseY = Math.random() * h;
     this.angle = Math.random() * Math.PI * 2;
     this.radius = Math.random() * (maxR - minR) + minR;
-
     const palette = ["#F4B9BF", "#F4D2D5", "#FFBEC0"];
     this.firstColor = palette[Math.floor(Math.random() * palette.length)];
     this.secondColor = `${this.firstColor}00`;
@@ -75,7 +73,6 @@ class Circle {
     this.angle += speed;
     const dx = (mouse.x - window.innerWidth / 2) * 0.05;
     const dy = (mouse.y - window.innerHeight / 2) * 0.05;
-
     const x = this.baseX / devicePixelRatio + Math.cos(this.angle) * 100 + dx;
     const y = this.baseY / devicePixelRatio + Math.sin(this.angle) * 100 + dy;
 
@@ -94,12 +91,11 @@ class Circle {
 document.addEventListener("DOMContentLoaded", () => {
   const mainMenu = document.querySelector(".main-menu");
   const mobileHeader = document.querySelector(".mobile-header");
-  const footer = document.querySelector("#site-footer");
   const menuToggleButtons = document.querySelectorAll(".menu-toggle");
   const mobileOverlay = document.querySelector(".mobile-menu-overlay");
   const burgerIcons = document.querySelectorAll(".burger-icon");
 
-  // фикс десктопа и мобилки
+  // фикс при скролле меню
   window.addEventListener("scroll", () => {
     if (window.scrollY > 250) {
       mainMenu?.classList.add("fixed");
@@ -110,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // бургер
+  // бургер меню
   menuToggleButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       mobileOverlay.classList.toggle("active");
@@ -120,29 +116,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // появление из блюра
+  // fade in blur
   window.addEventListener("load", () => {
-    document.querySelectorAll(".fade-blur").forEach((el) => {
-      el.classList.add("visible");
-    });
+    document
+      .querySelectorAll(".fade-blur")
+      .forEach((el) => el.classList.add("visible"));
   });
 
-  // появление карточек событий по скроллу
+  // карточки событий
   const cards = document.querySelectorAll(".fade-sticky");
-
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("fade-in");
-        }
+        if (entry.isIntersecting) entry.target.classList.add("fade-in");
       });
     },
-    {
-      threshold: 0.5,
-    }
+    { threshold: 0.5 }
   );
-
   cards.forEach((card) => observer.observe(card));
 
   // галерея департамента
@@ -154,32 +144,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (track && images.length && prevBtn && nextBtn && wrapper) {
     let currentIndex = 0;
-
     function updateGallery() {
       const slideWidth = wrapper.clientWidth;
       const offset = -currentIndex * slideWidth;
       track.style.transform = `translateX(${offset}px)`;
     }
-
     nextBtn.addEventListener("click", () => {
       if (currentIndex < images.length - 1) {
         currentIndex++;
         updateGallery();
       }
     });
-
     prevBtn.addEventListener("click", () => {
       if (currentIndex > 0) {
         currentIndex--;
         updateGallery();
       }
     });
-
     window.addEventListener("resize", updateGallery);
     updateGallery();
   }
 
-  // галерея магазина
   // галерея магазина
   const shopTrack = document.querySelector(".shop-gallery-track");
   const shopSlides = document.querySelectorAll(".shop-slide");
@@ -188,39 +173,69 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (shopTrack && shopSlides.length && shopPrevBtn && shopNextBtn) {
     let shopIndex = 0;
-
     function updateShopGallery() {
       const slideWidth = shopSlides[0].offsetWidth;
       const offset = -shopIndex * slideWidth;
       shopTrack.style.transform = `translateX(${offset}px)`;
     }
-
     shopNextBtn.addEventListener("click", () => {
       if (shopIndex < shopSlides.length - 1) {
         shopIndex++;
         updateShopGallery();
       }
     });
-
     shopPrevBtn.addEventListener("click", () => {
       if (shopIndex > 0) {
         shopIndex--;
         updateShopGallery();
       }
     });
-
     window.addEventListener("resize", updateShopGallery);
     updateShopGallery();
   }
 
-  // обработка кнопок предзаказа
-  document.querySelectorAll(".shop-order").forEach((btn) => {
+  // попап предзаказа
+  const popupOverlay = document.getElementById("shop-popup-overlay");
+  const popupClose = document.querySelector(".popup-close");
+  const popupForm = document.querySelector(".popup-form");
+  const popupSuccess = document.getElementById("popup-success");
+
+  document.querySelectorAll(".shop-order").forEach((btn, index) => {
     btn.addEventListener("click", () => {
-      console.log("Открыть popup предзаказа");
+      const slide = shopSlides[index];
+      if (!popupOverlay || !slide) return;
+
+      const name = slide.querySelector("h3")?.innerText ?? "";
+      popupOverlay.querySelector(".popup-product-name").innerText = name;
+
+      popupForm?.reset();
+
+      popupOverlay.style.display = "flex";
+      document.body.style.overflow = "hidden";
     });
   });
 
-  // Запуск градиентной анимации — на `window.onload`
+  popupClose?.addEventListener("click", () => {
+    popupOverlay.style.display = "none";
+    document.body.style.overflow = "";
+  });
+
+  popupForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    popupOverlay.style.display = "none";
+
+    if (popupSuccess) {
+      popupSuccess.style.display = "flex";
+      document.body.style.overflow = "hidden";
+
+      setTimeout(() => {
+        popupSuccess.style.display = "none";
+        document.body.style.overflow = "";
+      }, 3000);
+    }
+  });
+
+  // запуск градиента
   window.addEventListener("load", () => {
     new GradientAnimation();
   });
